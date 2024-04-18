@@ -18,5 +18,5 @@
 
     }
 } 
-Invoke-ScriptAnalyzer defend.ps1
+Invoke-ScriptAnalyzer -Path C:\Users\vagrant\Documents\defend.ps1
 testWDAC
