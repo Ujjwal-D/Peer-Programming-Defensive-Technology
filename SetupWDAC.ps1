@@ -1,6 +1,8 @@
 ﻿## Reference: https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/wdac-deployment-guide
 
 ## Update the path to your WDAC policy XML
+
+function SetupWDAC{
  $WDACPolicyXMLFile = $env:USERPROFILE + "\Desktop\MyWDACPolicy.xml"
  [xml]$WDACPolicy = Get-Content -Path $WDACPolicyXMLFile
  if (($WDACPolicy.SiPolicy.PolicyID) -ne $null) ## Multiple policy format (For Windows builds 1903+ only, including Server 2022)
@@ -12,6 +14,12 @@
  {
      $PolicyBinary = "SiPolicy.p7b"
  }
- 
- ## Binary file will be written to your desktop
+
+  
+ ## Binary file will be written to the desktop
  ConvertFrom-CIPolicy -XmlFilePath $WDACPolicyXMLFile -BinaryFilePath $env:USERPROFILE\Desktop\$PolicyBinary
+
+ }
+
+ SetupWDAC
+ 
