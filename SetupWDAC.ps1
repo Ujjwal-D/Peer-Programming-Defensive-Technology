@@ -19,6 +19,13 @@ function SetupWDAC{
  ## Binary file will be written to the desktop
  ConvertFrom-CIPolicy -XmlFilePath $WDACPolicyXMLFile -BinaryFilePath $env:USERPROFILE\Desktop\$PolicyBinary
 
+
+$PolicyName= "Lamna_FullyManagedClients_Audit"
+$LamnaPolicy=$env:userprofile+"\Desktop\"+$PolicyName+".xml"
+$EventsPolicy=$env:userprofile+"\Desktop\EventsPolicy.xml"
+$EventsPolicyWarnings=$env:userprofile+"\Desktop\EventsPolicyWarnings.txt"
+
+New-CIPolicy -FilePath $EventsPolicy -Audit -Level FilePublisher -Fallback SignedVersion,FilePublisher,Hash -UserPEs -MultiplePolicyFormat 3> $EventsPolicyWarnings
  }
 
  SetupWDAC
