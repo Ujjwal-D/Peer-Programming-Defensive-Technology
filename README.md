@@ -1,11 +1,11 @@
 # Peer-Programming-Defensive-Technology
 This repo handles codes and their results testing defensive technology.
 
-To run defend.ps1 follow the steps below:
+To run defendfunctions.ps1 follow the steps below:
 1. Run the program file ' defendfunctions.ps1 '
 2. In command line type the syntax: .\defendfunctions.ps1 function_name [Example: .\defendfunctions.ps1 testwdac]
 3. Here is list of function_name to choose:
-   a. testwdac : tests if specified program (keyfinder.txt) runs or not.
+   a. testwdac : tests if specified program (keyfinder.exe) runs or not.
    b. setupwdac : sets up the xml policy file to binary file.
    c. enablewdac : enables the WDAC policy file which defends installation of specified program.
    d. resetwdac : resets the WDAC policy state to disabled and restarts computer.
